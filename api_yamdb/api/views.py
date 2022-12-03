@@ -1,3 +1,11 @@
+from api.permissions import (IsAdmin, IsAdminOrReadOnly,
+                             OwnerAdminModeratorOrReadOnly)
+from api.serializers import (CategorySerializer, CommentSerializer,
+                             GenreSerializer, RegisterDataSerializer,
+                             ReviewSerializer, TitleSerializerGet,
+                             TitleSerializerPost, TokenSerializer,
+                             UserEditSerializer, UserSerializer)
+from api.service import GetPostDeleteViewSet, TitleFilter
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import send_mail
 from django.db.models import Avg
@@ -9,18 +17,9 @@ from rest_framework.decorators import action, api_view
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import AccessToken
-
-from api.permissions import (
-    IsAdmin, OwnerAdminModeratorOrReadOnly, IsAdminOrReadOnly
-)
-from api.serializers import (
-    CategorySerializer, CommentSerializer, GenreSerializer,
-    RegisterDataSerializer, ReviewSerializer, TitleSerializerGet,
-    TitleSerializerPost, TokenSerializer, UserEditSerializer, UserSerializer
-)
-from api.service import GetPostDeleteViewSet, TitleFilter
-from api_yamdb.settings import DEFAULT_FROM_EMAIL
 from reviews.models import Category, Comment, Genre, Review, Title, User
+
+from api_yamdb.settings import DEFAULT_FROM_EMAIL
 
 
 @api_view(["POST"])

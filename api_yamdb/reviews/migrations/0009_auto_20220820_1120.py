@@ -2,8 +2,8 @@
 
 import django.contrib.auth.validators
 import django.core.validators
-from django.db import migrations, models
 import reviews.models
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):

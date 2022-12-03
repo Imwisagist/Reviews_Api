@@ -1,4 +1,3 @@
-from api_yamdb.settings import DEFAULT_EMAIL_LENGTH, DEFAULT_FIELD_LENGTH
 from django.core.exceptions import ValidationError
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.shortcuts import get_object_or_404
@@ -6,8 +5,10 @@ from django.utils import timezone
 from rest_framework import serializers
 from rest_framework.relations import SlugRelatedField
 from rest_framework.validators import UniqueValidator
-from reviews.models import (Category, Comment, Genre, Review,
-                            Title, User, UsernameValidatorMixin)
+from reviews.models import (Category, Comment, Genre, Review, Title, User,
+                            UsernameValidatorMixin)
+
+from api_yamdb.settings import DEFAULT_EMAIL_LENGTH, DEFAULT_FIELD_LENGTH
 
 
 class UserSerializer(serializers.ModelSerializer, UsernameValidatorMixin):

@@ -39,7 +39,7 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-
 scp docker-compose.yml <username>@<host>:/home/<username>/docker-compose.yml
 scp nginx.conf <username>@<host>:/home/<username>/nginx.conf
 ```
-
+ 
 * Cоздайте .env файл и впишите:
     ```
     DB_ENGINE=<django.db.backends.postgresql>

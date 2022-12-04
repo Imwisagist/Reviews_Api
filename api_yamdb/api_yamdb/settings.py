@@ -53,7 +53,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'api_yamdb.wsgi.application'
-if DEBUG == False:
+if not DEBUG:
     DATABASES = {
         'default': {
             'ENGINE': os.getenv('DB_ENGINE', default='django.db.backends.postgresql'),
@@ -63,12 +63,12 @@ if DEBUG == False:
             'HOST': os.getenv('DB_HOST'),
             'PORT': os.getenv('DB_PORT')
         }
-    } 
+    }
 else:
     DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
